@@ -1,0 +1,14 @@
+<h1>CR Base</h1>
+<h2>New Post</h2>
+<form action="/posts/create">
+    <input type="text" name="title">
+    <input type="text" name="content">
+    <input type="submit" value="Submit">
+</form>
+<hr/>
+<h2>Posts</h2>
+<% @posts.each do |post| %>
+    <p>title : <%= post.title %></p>
+    <p>content : <%= post. content %></p>
+    <p>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ</p>
+<% end %>
