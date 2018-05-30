@@ -4,10 +4,30 @@ class PostsController < ApplicationController
   end
 
   def create
-    p = Post.new
-    p.title = params[:title]
-    p.content = params[:content]
-    p.save
+    post = Post.new
+    post.title = params[:title]
+    post.content = params[:content]
+    post.save
+    
+    redirect_to "/"
+  end
+  
+  def edit
+    @post = Post.find(params[:post_id])
+  end
+  
+  def update
+    post = Post.find(params[:post_id])
+    post.title = params[:title]
+    post.content = params[:content]
+    post.save
+    
+    redirect_to "/"
+  end
+  
+  def delete
+    post = Post.find(params[:post_id])
+    post.destroy
     
     redirect_to "/"
   end
